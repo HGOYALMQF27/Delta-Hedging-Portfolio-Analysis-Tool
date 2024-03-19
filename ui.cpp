@@ -6,7 +6,16 @@
 
 // Function to display portfolio statistics
 void displayPortfolioStats(double totalPnL, double avgHedgingError) {
-    // Implementation
+    Fl_Window *window = new Fl_Window(300, 200, "Portfolio Statistics");
+
+    Fl_Box *totalPnLBox = new Fl_Box(20, 40, 260, 25, "Total PnL:");
+    Fl_Box *totalPnLValue = new Fl_Box(20, 70, 260, 25, std::to_string(totalPnL).c_str());
+
+    Fl_Box *avgHedgingErrorBox = new Fl_Box(20, 110, 260, 25, "Average Hedging Error:");
+    Fl_Box *avgHedgingErrorValue = new Fl_Box(20, 140, 260, 25, std::to_string(avgHedgingError).c_str());
+
+    window->end();
+    window->show();
 }
 
 int main() {
